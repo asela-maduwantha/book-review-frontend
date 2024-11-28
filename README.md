@@ -17,7 +17,7 @@ This is a React single-page application (SPA) for managing book reviews. It comm
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/book-review-frontend.git
+   git clone https://github.com/asela-maduwantha/book-review-frontend.git
    cd book-review-frontend
    ```
 2. Install dependencies:
