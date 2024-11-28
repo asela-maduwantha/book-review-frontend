@@ -13,7 +13,7 @@ const BookReviewUpdate = () => {
   useEffect(() => {
     const fetchReviewDetails = async () => {
       try {
-        const response = await apiClient.get(`/${id}`);
+        const response = await apiClient.get(`/reviews/${id}`);
         setInitialValues(response.data);
       } catch (error) {
         showToast('Failed to fetch review details', 'error');
@@ -26,7 +26,7 @@ const BookReviewUpdate = () => {
   const handleUpdate = async (data) => {
     try {
       const updatePayload = { ...initialValues, ...data };
-      await apiClient.put(`/${id}`, updatePayload);
+      await apiClient.put(`/reviews/${id}`, updatePayload);
       showToast('Review updated successfully');
       navigate('/');
     } catch (error) {

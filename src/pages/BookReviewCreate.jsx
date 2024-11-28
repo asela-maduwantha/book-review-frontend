@@ -10,7 +10,7 @@ const BookReviewCreate = () => {
 
   const handleCreate = async (data) => {
     try {
-      await apiClient.post('', data);
+      await apiClient.post('/reviews', data);
       showToast('Review created successfully');
       navigate('/');
     } catch (error) {

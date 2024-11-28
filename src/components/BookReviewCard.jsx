@@ -1,8 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Star, Trash2, Edit } from 'lucide-react';
+import { Star, Trash2, Edit, Calendar } from 'lucide-react';
 
 const BookReviewCard = ({ review, onDelete }) => {
+  const formatDate = (dateString) => {
+    try {
+      const date = new Date(dateString);
+      return date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+    } catch (error) {
+      return 'Date not available';
+    }
+  };
+
   return (
     <div className="bg-white shadow-lg rounded-xl overflow-hidden transform transition-all hover:scale-[1.02] hover:shadow-2xl">
       <div className="p-6">
@@ -24,9 +37,15 @@ const BookReviewCard = ({ review, onDelete }) => {
           </div>
         </div>
         <p className="text-gray-800 mb-4 leading-relaxed">{review.reviewText}</p>
+        
+        <div className="flex items-center text-gray-500 text-sm mb-4">
+          <Calendar className="w-4 h-4 mr-2" />
+          <span>{formatDate(review.reviewDate)}</span>
+        </div>
+        
         <div className="flex justify-end space-x-2">
-          <Link 
-            to={`/edit/${review.id}`} 
+          <Link
+            to={`/edit/${review.id}`}
             className="flex items-center space-x-2 text-blue-500 hover:text-blue-600 bg-blue-50 hover:bg-blue-100 px-3 py-2 rounded-full transition-all"
           >
             <Edit className="w-5 h-5" />

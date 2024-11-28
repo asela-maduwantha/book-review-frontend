@@ -17,7 +17,7 @@ This is a React single-page application (SPA) for managing book reviews. It comm
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/book-review-frontend.git
+   git clone https://github.com/asela-maduwantha/book-review-frontend.git
    cd book-review-frontend
    ```
 2. Install dependencies:
@@ -31,7 +31,7 @@ This is a React single-page application (SPA) for managing book reviews. It comm
 If the backend URL differs from the default, update the API base URL in `src/services/apiClient.js`
  ```bash
  const apiClient = axios.create({
-  baseURL: 'http://localhost:8080/api/book-reviews',
+  baseURL: 'http://localhost:8080/reviews',
 });
 ```
 
